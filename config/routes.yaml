@@ -1,5 +1,17 @@
+home:
+    path: /home/home
+    controller: App\Controller\templatesController\HomeController::home
+
+
+security_login:
+    path: /security/login
+    controller: App\Controller\SecurityController::login
+
+
 controllers:
     resource:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+   

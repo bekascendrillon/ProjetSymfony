@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link rel="stylesheet" href="{{ asset('css/manuestyles.css') }}"> <!-- Lien vers votre fichier CSS -->
+    <!-- Ajoutez le lien vers Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Styles CSS spécifiques à cette page */
+        .sidebar {
+            /* Vos styles pour la barre latérale */
+        }
+        
+        .content {
+            /* Vos styles pour le contenu principal */
+        }
+
+        .new-post {
+            width: 50%; /* Largeur réduite pour le cadre de nouvelle publication */
+            margin: 20px auto; /* Centrer horizontalement */
+            padding: 10px; /* Espacement interne */
+            background-color: #f9f9f9; /* Couleur de fond */
+            border-radius: 10px; /* Coins arrondis */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+            overflow: hidden; /* Pour éviter le débordement du contenu */
+        }
+
+        .new-post textarea {
+            width: calc(100% - 22px); /* Réduire la largeur du texte pour éviter le débordement */
+            resize: none; /* Désactiver le redimensionnement */
+            padding: 10px; /* Espacement interne */
+            margin-bottom: 10px; /* Espacement en bas */
+            border: 1px solid #ccc; /* Bordure légère */
+            border-radius: 5px; /* Coins arrondis */
+            height: 50px; /* Hauteur réduite */
+        }
+
+        .params {
+            margin-top: 20px; /* Espacement par rapport aux autres éléments */
+            text-align: center; /* Centrage du contenu */
+            margin-bottom: 20px; /* Espacement en bas */
+        }
+
+        .params a {
+            display: block; /* Affichage en bloc pour chaque lien */
+            margin-bottom: 10px; /* Espacement entre les liens */
+        }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <ul>
+        <li><a href="#"><i class="fas fa-home"></i> Accueil</a></li>
+        <li><a href="#"><i class="fas fa-search"></i> Recherche</a></li>
+        <li><a href="#"><i class="fas fa-user"></i> Profil</a></li>
+        <li><a href="#"><i class="fas fa-bell"></i> Notifications</a></li>
+        <li><a href="#"><i class="fas fa-cog"></i> Paramètres</a></li>
+    </ul>
+    <div class="params">
+        <!-- Laissez cet élément vide pour le moment -->
+    </div>
+</div>
+
+<div class="content">
+    <h1>Fil d'actualités</h1>
+    <div id="posts-container">
+        <!-- Les publications seront insérées ici dynamiquement -->
+    </div>
+
+    <div class="new-post">
+        <textarea id="post-content" placeholder="Partagez quelque chose..."></textarea>
+        <button id="post-btn"><i class="fas fa-paper-plane"></i> Publier</button>
+    </div>
+</div>
+
+<script src="{{ asset('js/manuescripts.js') }}"></script> <!-- Lien vers votre fichier JavaScript -->
+</body>
+</html>
