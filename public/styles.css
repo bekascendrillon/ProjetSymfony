@@ -1,0 +1,12 @@
+/* public/css/styles.css */
+body {
+    padding-top: 3rem;
+}
+
+.container {
+    max-width: 600px;
+}
+
+.btn-lg {
+    width: 100%;
+}

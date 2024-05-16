@@ -3,26 +3,44 @@
 {% block title %}Inscription{% endblock %}
 
 {% block body %}
-<section class="container">
-     <div class="row">
-        <div class="col">
-             <h1>Inscription</h1>
+<section class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title mb-4 text-center">Inscription</h1>
 
-                {{ form_errors(registrationForm) }}
-                   
+                    {% for error in form_errors(registrationForm) %}
+                        <div class="alert alert-danger">
+                            {{ error.message }}
+                        </div>
+                    {% endfor %}
 
-                {{ form_start(registrationForm) }}
-                    {{ form_row(registrationForm.username) }}
-                    {{ form_row(registrationForm.plainPassword, {
-                        label: 'Password'
-                    }) }}
-                    {{ form_row(registrationForm.RGPDConsent) }}
+                    {{ form_start(registrationForm) }}
+                        <div class="mb-3">
+                            {{ form_label(registrationForm.username) }}
+                            {{ form_widget(registrationForm.username, {'attr': {'class': 'form-control'}}) }}
+                            {{ form_errors(registrationForm.username) }}
+                        </div>
 
-                    <button type="submit" class="btn btn-primary btn-lg my-3">S'inscrire</button>
-                {{ form_end(registrationForm) }}
+                        <div class="mb-3">
+                            {{ form_label(registrationForm.plainPassword ) }}
+                            {{ form_widget(registrationForm.plainPassword, {'attr': {'class': 'form-control'}}) }}
+                            {{ form_errors(registrationForm.plainPassword) }}
+                        </div>
 
+
+                        <div class="mb-3 form-check">
+                            {{ form_widget(registrationForm.RGPDConsent, {'attr': {'class': 'form-check-input'}}) }}
+                            {{ form_label(registrationForm.RGPDConsent, null, {'label_attr': {'class': 'form-check-label'}}) }}
+                            {{ form_errors(registrationForm.RGPDConsent) }}
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg w-100">S'inscrire</button>
+                    {{ form_end(registrationForm) }}
+                </div>
+            </div>
         </div>
     </div>
 </section>
-
-   {% endblock %}
+{% endblock %}
