@@ -2,6 +2,22 @@ home:
     path: /home/home
     controller: App\Controller\templatesController\HomeController::home
 
+profil:
+    path: /profil/profil/{username}
+    controller: App\Controller\templatesController\ProfilController::profil
+
+parametres:
+    path: /parametres/parametres
+    controller: App\Controller\templatesController\ParametresController::parametres
+
+notifications:
+    path: /notifications/notifications
+    controller: App\Controller\templatesController\NotificationsController::notifications
+
+recherhce:
+    path: /recherhce/recherche
+    controller: App\Controller\templatesController\RechercheController::recherche
+
 
 security_login:
     path: /security/login
